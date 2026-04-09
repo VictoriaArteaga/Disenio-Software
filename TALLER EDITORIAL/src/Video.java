@@ -24,6 +24,9 @@ public class Video extends Publicacion{
     }
 
     public void setIdioma(TipoIdioma idioma) {
+        if (idioma == null) {
+            throw new IllegalArgumentException("El idioma no puede ser nulo.");
+        }
         this.idioma = idioma;
     }
 
@@ -37,7 +40,9 @@ public class Video extends Publicacion{
             this.duracionHoras = duracionHoras;
         }
 
-        throw new IllegalArgumentException("La duración del video debe ser mayor a 0.");
+        else {
+            throw new IllegalArgumentException("La duración del video debe ser mayor a 0.");
+        }
     }
 
     @Override

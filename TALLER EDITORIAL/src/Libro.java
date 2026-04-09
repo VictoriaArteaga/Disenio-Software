@@ -26,26 +26,29 @@ public class Libro extends Publicacion{
 
     public void setNumeroPaginas(int numeroPaginas) {
 
-        if (numeroPaginas > 0 ) {
+        if (numeroPaginas > 0) {
             this.numeroPaginas = numeroPaginas;
         }
-
-        throw  new IllegalArgumentException("EL número de páginas debe ser mayor que 0.");
+        else {
+            throw  new IllegalArgumentException("EL número de páginas debe ser mayor que 0.");
+        }
     }
 
     public int getAnioPublicacion() {
         return this.anioPublicacion;
     }
 
-    public void setAnioPublicacion( int anioPublicacion ) {
+    public void setAnioPublicacion(int anioPublicacion) {
 
-        int ANIO_ACTUAL = 2026;
+        final int ANIO_ACTUAL = java.time.Year.now().getValue();
 
         if (anioPublicacion > 0 && anioPublicacion <= ANIO_ACTUAL) {
             this.anioPublicacion = anioPublicacion;
         }
 
-        throw new IllegalArgumentException("El año de publicación debe estar en el rango de 0 y año actual.");
+        else {
+            throw new IllegalArgumentException("El año de publicación debe estar en el rango de 0 y año actual.");
+        }
     }
 
     @Override

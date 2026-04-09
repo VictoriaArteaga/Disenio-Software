@@ -23,7 +23,9 @@ public class Disco extends Publicacion{
             this.duracionMinutos = duracionMinutos;
         }
 
-        throw new IllegalArgumentException("La duración debe ser mayor que 0.");
+        else {
+            throw new IllegalArgumentException("La duración debe ser mayor que 0.");
+        }
     }
 
     @Override

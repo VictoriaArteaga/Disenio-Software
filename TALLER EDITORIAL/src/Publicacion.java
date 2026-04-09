@@ -1,4 +1,4 @@
-public class Publicacion {
+public abstract class Publicacion {
 
     private String titulo;
     private double precio;
@@ -6,7 +6,7 @@ public class Publicacion {
 
     public Publicacion() {}
 
-    public Publicacion( String titulo, double precio) {
+    public Publicacion(String titulo, double precio) {
 
         this.titulo = titulo;
         setPrecio(precio);
@@ -25,7 +25,7 @@ public class Publicacion {
         return this.precio;
     }
 
-    public void setPrecio( double precio) {
+    public void setPrecio(double precio) {
 
         if (precio > 0 ) {
             this.precio = precio;
